@@ -4,6 +4,7 @@
 # pop for removal
 # conditions to check - overflow, underflow
 
+
 class stack:
 
     def __init__(self):
@@ -28,7 +29,7 @@ class stack:
         if len(self.data) == 0:
             return 'Underflow'
         else:
-            self.data.pop()
+            return self.data.pop()
 
 
 a = stack()  # creating a object named 'a' of the class 'stack'
@@ -46,8 +47,8 @@ print(a.data)
 print(a.push(17))
 
 print(a.pop())
-print(a.pop())
-print(a.pop())
-print(a.pop())
-print(a.pop())
-print(a.pop())  # there us no element in the stack to remove. therefore 'underflow'
+# a.pop()
+# a.pop()
+# a.pop()
+# a.pop()
+# print(a.pop())  # there us no element in the stack to remove. therefore 'underflow'

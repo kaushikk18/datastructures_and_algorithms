@@ -19,3 +19,4 @@ movies = {
 
 print(movies)
 print(movies['dicaprio']['1'])
+print(movies['brad pit']['2'])

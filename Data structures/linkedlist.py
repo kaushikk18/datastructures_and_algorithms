@@ -11,13 +11,13 @@ class Node():
 class LinkedList:
 
     def __init__(self):
-        self.head = None
+        self.head_node = None
 
     def print(self):
-        if self.head is None:
+        if self.head_node is None:
             print("Linked list is empty")
             return
-        itr = self.head
+        itr = self.head_node
         llstr = ''
         while itr:
             llstr += str(itr.data)+' --> '
@@ -26,28 +26,28 @@ class LinkedList:
         print(llstr)
 
     def insert_at_begining(self, data):
-        node = Node(data, self.head)
-        self.head = node
+        node = Node(data, self.head_node)
+        self.head_node = node
 
     def insert_at_end(self, data):
-        if self.head is None:
-            self.head = Node(data, None)
+        if self.head_node is None:
+            self.head_node = Node(data, None)
             return
 
-        itr = self.head
+        itr = self.head_node
 
         while itr.next:
             itr = itr.next
         itr.next = Node(data, None)
 
     def insert_values(self, data_list):
-        self.head = None
+        self.head_node = None
         for data in data_list:
             self.insert_at_end(data)
 
     def get_length(self):
         count = 0
-        itr = self.head
+        itr = self.head_node
         while itr:
             count += 1
             itr = itr.next
@@ -62,7 +62,7 @@ class LinkedList:
             return
 
         count = 0
-        itr = self.head
+        itr = self.head_node
         while itr:
             if count == index - 1:
                 node = Node(data, itr.next)
@@ -77,11 +77,11 @@ class LinkedList:
             raise Exception("Invalid Index")
 
         if index == 0:
-            self.head = self.head.next
+            self.head_node = self.head_node.next
             return
 
         count = 0
-        itr = self.head
+        itr = self.head_node
         while itr:
             if count == index - 1:
                 itr.next = itr.next.next
@@ -97,7 +97,9 @@ if __name__ == '__main__':
     ll.insert_at_begining('21')
     ll.insert_at_begining('69')
     ll.insert_at_end('92')
+    ll.insert_at(2, '234')
+    ll.remove_at(0)
     # ll.insert_values(['kaushik', 'jeeva', 'harith'])
-    print('the length is', ll.get_length())
+    # print('the length is', ll.get_length())
 
     ll.print()
